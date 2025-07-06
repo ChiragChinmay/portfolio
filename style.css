@@ -1,0 +1,99 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to top left, green, yellow);
+
+}
+
+#parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.child {
+    height: 90vh;
+    width: 90%;
+    display: flex;
+    border-radius: 12px;
+    background: linear-gradient(to bottom left, brown, grey);
+    transition: all;
+    transition-duration: 1s;
+    transition-delay: 0.2s;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.child:hover {
+    /* scale: 1.1; */
+    /* width: 100vh; */
+
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    /* ✅ Allows buttons to wrap if screen is too small */
+    justify-content: center;
+    /* ✅ Optional: keeps nav centered */
+}
+
+nav a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: beige;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 8px 1.5vw;
+    /* ✅ Responsive horizontal padding */
+    transition: all 0.3s;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: clamp(12px, 2vw, 18px);
+    /* ✅ Font size shrinks on smaller screens */
+    white-space: nowrap;
+    /* ✅ Prevent text wrapping */
+}
+
+nav a:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* @media (max-width: 768px) {
+    .child {
+        flex-direction: column;
+        /* Stack content vertically */
+        /* align-items: center; */
+        /* Center nav horizontally */
+        /* justify-content: flex-start;
+        padding: 20px; */
+        /* Add padding on smaller screens */
+    /* } */
+
+    /* nav {
+        flex-direction: column;
+        /* Stack nav links vertically */
+        /* align-items: right; */
+        /* justify-content: flex-end; */
+        /* margin: 20px 0 0 0; */
+    /* } */ */
+
+    /* nav a {
+        width: 80%;
+        /* Make buttons wider for mobile */
+        /* text-align: center; */
+        
+    }
+} 
