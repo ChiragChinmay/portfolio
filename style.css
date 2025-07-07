@@ -2,8 +2,8 @@ body {
     padding: 0;
     margin: 0;
     height: 100vh;
-    background: linear-gradient(to top left, rgb(221, 235, 205), yellow);
-
+    background: linear-gradient(to top left, green, yellow);
+    font-family: sans-serif;
 }
 
 #parent {
@@ -11,58 +11,63 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-
 }
 
 .child {
     height: 90vh;
     width: 90%;
     display: flex;
+    flex-direction: column;
+    /* Stack header and content vertically */
     border-radius: 12px;
-    background: linear-gradient(to bottom left, rgb(185, 235, 163), grey);
-    transition: all;
-    transition-duration: 1s;
-    transition-delay: 0.2s;
-    align-items: flex-start;
-    justify-content: flex-end;
+    background: linear-gradient(to bottom left, brown, grey);
+    transition: all 1s ease 0.2s;
+    padding: 12px;
+    box-sizing: border-box;
 }
 
-.child:hover {
-    /* scale: 1.1; */
-    /* width: 100vh; */
-
+/* Header row with logo and nav */
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
+#logo {
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    background-color: rgb(219, 150, 45);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 18px;
+}
+
+/* Nav bar */
 nav {
     display: flex;
     gap: 10px;
-    margin-left: auto;
-    margin-top: 10px;
     flex-wrap: wrap;
-    /* ✅ Allows buttons to wrap if screen is too small */
     justify-content: center;
-    /* ✅ Optional: keeps nav centered */
 }
 
 nav a {
     text-decoration: none;
-    text-align: center;
     color: black;
     background-color: beige;
     border: 2px solid black;
     border-radius: 6px;
     padding: 8px 1.5vw;
-    /* ✅ Responsive horizontal padding */
     transition: all 0.3s;
     font-weight: bold;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     font-size: clamp(12px, 2vw, 18px);
-    /* ✅ Font size shrinks on smaller screens */
     white-space: nowrap;
-    /* ✅ Prevent text wrapping */
 }
 
 nav a:hover {
@@ -71,29 +76,88 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* @media (max-width: 768px) {
-    .child {
-        flex-direction: column;
-        /* Stack content vertically */
-        /* align-items: center; */
-        /* Center nav horizontally */
-        /* justify-content: flex-start;
-        padding: 20px; */
-        /* Add padding on smaller screens */
-    /* } */
+/* Main content below nav */
 
-    /* nav {
-        flex-direction: column;
-        /* Stack nav links vertically */
-        /* align-items: right; */
-        /* justify-content: flex-end; */
-        /* margin: 20px 0 0 0; */
-    /* } */ */
 
-    /* nav a {
-        width: 80%;
-        /* Make buttons wider for mobile */
-        /* text-align: center; */
-        
+.main-content {
+    background-color: rgb(183, 236, 236);
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    color: black;
+    font-size: 16px;
+    height: auto;
+    /* width: 50%; */
+
+}
+
+#image-links {
+    display: flex;
+}
+
+
+/* Footer */
+footer {
+    background-color: black;
+    line-height: 3;
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    font-family: sans-serif;
+}
+
+.links-only {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
-} 
+
+    nav {
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    #logo {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    .main-content {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    #image-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .links-only {
+        width: 100%;
+        padding-top: 10px;
+        align-items: flex-start;
+    }
+
+    .child {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    #parent {
+        height: auto;
+        min-height: 100vh;
+        align-items: flex-start;
+        padding: 8px;
+    }
+   #image-links img {
+       width: 90%;
+       max-width: 300px;
+   }
+}
