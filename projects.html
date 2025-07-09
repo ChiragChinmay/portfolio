@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Make sure html and body fill full height */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Use Flexbox layout on body */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .head-projects {
+            margin-bottom: 20px;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #proj-parent-div {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .proj-box {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 4px;
+            border: 2px solid black;
+
+        }
+
+        /* Main content takes all remaining space */
+        main {
+            flex: 1;
+        }
+.proj-box img{
+    width: 200px;
+    height: 150px;
+    object-fit: cover; /* Makes the image fill the box without stretching */
+    border-radius: 10px; /* Optional: for rounded corners */
+}
+
+
+
+        /* Optional footer styling */
+        footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 2px;
+        }
+
+      @media screen and (max-width: 768px) {
+        .head-projects{
+            font-size: 20px;
+            margin-top: 12px;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="head-projects"><b>PROJECTS THAT I HAVE MADE</b></div>
+    </header>
+    <main>
+        <div id="proj-parent-div">
+            <div class="proj-box" >
+                <img src="Brown And White Minimalist Initial Logo (1).png" alt="" >
+                <b>Project 1, hopefully will be great for everyone</b>
+            </div>
+            <div class="proj-box"></div>
+            <div class="proj-box"></div>
+            <div class="proj-box"></div>
+            <div class="proj-box"></div>
+            <div class="proj-box"></div>
+            <div class="proj-box"></div>
+            <div class="proj-box"></div>
+            <div class="proj-box"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="projects-footer">All rights reserved © 2025</div>
+    </footer>
+</body>
+
+</html>
